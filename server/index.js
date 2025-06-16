@@ -2,19 +2,20 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 
+const { main, repeat } = require("./src/functions");
+
+const cors = require("cors");
+const corsOptions = {
+  origin: ["http://localhost:5173"],
+};
+app.use(cors(corsOptions));
+
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  main(req, res);
 });
 
 app.get("/repeat", (req, res) => {
-  const { text } = req.query;
-  const { count } = req.query;
-  const repeatedText = Array.from({ length: count }, () => text);
-  res.json({
-    result: repeatedText,
-    text: text,
-    count: count,
-  });
+  repeat(req, res);
 });
 
 app.listen(PORT, () => {
