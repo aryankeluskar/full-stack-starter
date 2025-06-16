@@ -1,23 +1,25 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [query, setQuery] = useState("Hello World! ")
-  const [count, setCount] = useState(0)
-  const [result, setResult] = useState("")
+  const [query, setQuery] = useState("Hello World! ");
+  const [count, setCount] = useState(0);
+  const [result, setResult] = useState("");
 
-  const fetchWithRefresh = async() => {
-    const response = await fetch(`http://localhost:8080/repeat?text=${query}&count=${count}`)
-    const data = await response.json()
-    setResult(data.result.join("\n"))
+  const fetchWithRefresh = async () => {
+    const response = await fetch(
+      `http://localhost:8080/repeat?text=${query}&count=${count}`,
+    );
+    const data = await response.json();
+    setResult(data.result.join("\n"));
     console.log(data);
-  }
+  };
 
   useEffect(() => {
-    fetchWithRefresh()
-  }, [count, query])
+    fetchWithRefresh();
+  }, [count, query]);
 
   return (
     <>
@@ -35,17 +37,19 @@ function App() {
           count is {count}
         </button>
         <br />
-        <input type='text' className='card my-4 text-center overflow-scroll bg-gray-100 text-black border-2 border-black rounded-md p-2' value={query} onChange={(e) => setQuery(e.target.value)}>
-        </input>
-        <p>
-          {result}
-        </p>
+        <input
+          type="text"
+          className="card my-4 text-center overflow-scroll bg-gray-100 text-black border-2 border-black rounded-md p-2"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        ></input>
+        <p>{result}</p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
