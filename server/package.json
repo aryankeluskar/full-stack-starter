@@ -1,21 +1,13 @@
 {
   "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "vercel dev",
+    "deploy": "vercel"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "hono": "^4.8.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "vercel": "^32.4.1"
   }
 }
