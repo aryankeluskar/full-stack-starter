@@ -6,8 +6,7 @@ const solway = Solway({
   variable: "--font-solway",
   subsets: ["latin"],
   weight: ["400", "700"],
-})
-
+});
 
 export const metadata: Metadata = {
   title: "The [soy.run] Stack - Next.js + Hono on Vercel + Cloudflare",
@@ -21,10 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
