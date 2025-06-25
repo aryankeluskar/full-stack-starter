@@ -6,9 +6,9 @@
   "routes": [
     {
       "pattern": "hono-server.soy.run",
-      "custom_domain": true
-    }
-  ]
+      "custom_domain": true,
+    },
+  ],
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

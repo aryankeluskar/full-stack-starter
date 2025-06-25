@@ -38,6 +38,13 @@ export default function Home() {
             width={100}
             height={100}
           />
+          <Image
+            src={nextLogo}
+            className="logo"
+            alt="Next.js logo"
+            width={100}
+            height={100}
+          />
         </a>
         <p className="text-8xl"> + </p>
         <a href="https://hono.dev" target="_blank">
