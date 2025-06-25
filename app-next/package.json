@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "deploy": "vercel deploy",
+    "deploy:prod": "vercel deploy --prod",
     "start": "next start",
     "lint": "next lint"
   },

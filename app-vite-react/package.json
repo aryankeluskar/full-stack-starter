@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "vercel deploy",
+    "deploy:prod": "vercel deploy --prod",
     "lint": "eslint .",
     "preview": "vite preview"
   },

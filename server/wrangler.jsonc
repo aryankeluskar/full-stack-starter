@@ -3,6 +3,12 @@
   "name": "server",
   "main": "src/index.ts",
   "compatibility_date": "2025-06-25",
+  "routes": [
+    {
+      "pattern": "hono-server.soy.run",
+      "custom_domain": true
+    }
+  ]
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

@@ -1,17 +1,17 @@
-"use client";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import nextLogo from "@/public/next.svg";
-import honoLogo from "@/public/hono.svg";
-import vercelLogo from "@/public/vercel.svg";
-import cloudflareLogo from "@/public/cloudflare.svg";
+import { useState, useEffect } from "react";
+import reactLogo from "./public/react.svg";
+import viteLogo from "./public/vite.svg";
+import honoLogo from "./public/hono.svg";
+import vercelLogo from "./public/vercel.svg";
+import cloudflareLogo from "./public/cloudflare.svg";
+import "./App.css";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://hono-server.soy.run/";
+  import.meta.env.VITE_PUBLIC_BASE_URL || "https://hono-server.soy.run/";
 
-export default function Home() {
+function App() {
+  const [query, setQuery] = useState("Hello World! ");
   const [count, setCount] = useState(0);
-  const [query, setQuery] = useState("");
   const [result, setResult] = useState("");
 
   const fetchWithRefresh = async () => {
@@ -31,8 +31,18 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-[#f6f6f6]">
       <div className="flex flex-row items-center justify-center mb-8 gap-8">
         <a href="https://nextjs.org" target="_blank">
-          <Image
-            src={nextLogo}
+          <img
+            src={reactLogo}
+            className="logo"
+            alt="Next.js logo"
+            width={100}
+            height={100}
+          />
+        </a>
+        <p className="text-8xl"> + </p>
+        <a href="https://vitejs.dev" target="_blank">
+          <img
+            src={viteLogo}
             className="logo"
             alt="Next.js logo"
             width={100}
@@ -41,7 +51,7 @@ export default function Home() {
         </a>
         <p className="text-8xl"> + </p>
         <a href="https://hono.dev" target="_blank">
-          <Image
+          <img
             src={honoLogo}
             className="logo react"
             alt="React logo"
@@ -51,7 +61,7 @@ export default function Home() {
         </a>
         <p className="text-8xl"> = </p>
         <a href="https://vercel.com" target="_blank">
-          <Image
+          <img
             src={vercelLogo}
             className="logo"
             alt="Vercel logo"
@@ -61,7 +71,7 @@ export default function Home() {
         </a>
         <p className="text-8xl"> + </p>
         <a href="https://cloudflare.com" target="_blank">
-          <Image
+          <img
             src={cloudflareLogo}
             className="logo"
             alt="Cloudflare logo"
@@ -70,8 +80,9 @@ export default function Home() {
           />
         </a>
       </div>
+
       <h1 className="text-4xl mb-4 font-bold font-solway">
-        Next.js + Hono = The [soy.run] Stack
+        React + Vite + Hono = The [soy.run] Stack
       </h1>
       <div className="card text-center mx-auto w-1/2">
         <input
@@ -90,8 +101,10 @@ export default function Home() {
       </div>
       <p className="text-center mx-auto w-1/2">{result}</p>
       <p className="read-the-docs">
-        Click on the Next.js and Hono logos to learn more
+        Click on the React, Vite and Hono logos to learn more
       </p>
     </div>
   );
 }
+
+export default App;
